@@ -13,6 +13,8 @@ import paperStyles from "./TornPaper.module.css"
 
 
 function App() {
+  const baseUrl = import.meta.env.BASE_URL;
+  
   const [dummyVisible, setDummyVisible] = useState(true)
   const [overlayVisible, setOverlayVisible] = useState(false)
   const [clickedItems, setClickedItems] = useState(new Set())
@@ -52,24 +54,24 @@ function App() {
   }
 
   const gridItems = [
-    { num: 1, row: 1, col: 1, image: '/images/img1.jpg' },
-    { num: 2, row: 1, col: 2, image: '/images/img2.png' },
-    { num: 3, row: 1, col: 3, image: '/images/img3.jpg' },
-    { num: 4, row: 1, col: 4, image: '/images/img4.png' },
-    { num: 5, row: 2, col: 1, image: '/images/img5.jpg' },
-    { num: 6, row: 2, col: '2/4', isCenter: true, image: '/images/img6.jpg' },
-    { num: 7, row: 2, col: 4, image: '/images/img7.jpg' },
-    { num: 8, row: 3, col: 1, image: '/images/img8.jpg' },
-    { num: 9, row: 3, col: 2, image: '/images/img9.jpg' },
-    { num: 10, row: 3, col: 3, image: '/images/img10.jpg' },
-    { num: 11, row: 3, col: 4, image: '/images/img11.png' },
+    { num: 1, row: 1, col: 1, image: `${baseUrl}images/img1.jpg` },
+    { num: 2, row: 1, col: 2, image: `${baseUrl}images/img2.png` },
+    { num: 3, row: 1, col: 3, image: `${baseUrl}images/img3.jpg` },
+    { num: 4, row: 1, col: 4, image: `${baseUrl}images/img4.png` },
+    { num: 5, row: 2, col: 1, image: `${baseUrl}images/img5.jpg` },
+    { num: 6, row: 2, col: '2/4', isCenter: true, image: `${baseUrl}images/img6.jpg` },
+    { num: 7, row: 2, col: 4, image: `${baseUrl}images/img7.jpg` },
+    { num: 8, row: 3, col: 1, image: `${baseUrl}images/img8.jpg` },
+    { num: 9, row: 3, col: 2, image: `${baseUrl}images/img9.jpg` },
+    { num: 10, row: 3, col: 3, image: `${baseUrl}images/img10.jpg` },
+    { num: 11, row: 3, col: 4, image: `${baseUrl}images/img11.png` },
   ]
 
   // show the initial dummy screen first
   if (dummyVisible) {
     return (
       <div style={styles.dummyScreen}>
-        <div style={styles.dummyScreenBg}></div>
+        <div style={{...styles.dummyScreenBg, backgroundImage: `url(${baseUrl}images/img12.png)`}}></div>
         <div style={styles.dummyContent} onClick={handleDummyClick}>
           <p style={styles.dummyText}>Alteast Smile its your gift 👀</p>
           <p style={styles.clickHint}>Click to continue</p>
@@ -148,7 +150,6 @@ const styles = {
     left: 0,
     width: '100%',
     height: '100%',
-    backgroundImage: 'url(/images/img12.png)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
