@@ -86,7 +86,7 @@ function App() {
         <div style={styles.messageOverlay}>
           <div style={styles.messageBox}>
             <p style={styles.messageText}>Unfold each of your photo</p>
-            <p style={styles.messageText}>click at the middle photo in last pls🤗</p>
+            <p style={styles.messageText}>click at the middle photo at-last, It's my Favourite🤗</p>
           </div>
         </div>
       )}
